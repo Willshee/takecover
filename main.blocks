@@ -1,0 +1,5 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="m%71-Qt0tcJ1X+EoHGX^">timeval</variable><variable id="JC/[c~]i~JIR*#ZK+dNh">status</variable><variable id="bN}DTTVLqGUBGNG$2cbT">moveMotorZIP</variable><variable id="^yu3-F7`kijh5DBCN3c1">scanPeriod</variable><variable id="kW*h^E$HwdPR/5zTspE5">countLength</variable><variable id="H8[g-~O/|iCK64C7,67=">startTime</variable><variable id="D4L29aE`~K9?d(8]kNUG">count</variable><variable id="bTo8iIo5cX`YGNLI%4|7">pauseTime</variable><variable id="~XQnO1MROWV/Aor_cm$e">beepPeriod</variable></variables><comment id="}}|1`:=vzVzg9Py.9!?)" data="2" x="0" y="4588" h="160" w="230">status is defined as
+1 running scan scanLEDS
+2 counting down
+3 exploding</comment><comment id="akLj}YNBG|+C(_@e%x6V" data="1" x="275" y="4588" h="120" w="480">used to hold status so program can run as a state machine</comment><comment id="exQ*bPAs=z]JAs?LK6kj" data="0" x="0" y="4793" h="120" w="480">Microbit countdown "bomb"
+For Micro:bit installed in with Kitronik Move:Motor</comment></xml>

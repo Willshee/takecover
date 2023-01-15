@@ -7,6 +7,7 @@
 /* Function for the "explosion" behaviour */
 function explode () {
     moveMotorZIP.showColor(Kitronik_Move_Motor.colors(Kitronik_Move_Motor.ZipLedColors.Red))
+    music.playSoundEffect(mySound, SoundExpressionPlayMode.InBackground)
     Kitronik_Move_Motor.spin(Kitronik_Move_Motor.SpinDirections.Left, 100)
     basic.showIcon(IconNames.No)
     basic.pause(1000)
@@ -147,7 +148,8 @@ Status is defined as
 */
 let moveMotorZIP: Kitronik_Move_Motor.MoveMotorZIP = null // Zip LED class
 const scanPeriod = 2000 // Period to rotate the scanning LEDs
-
+// A sound effect definition for the explode effect (could be declared locally in a later version)
+const mySound = music.createSoundEffect(WaveShape.Noise, 100, 200, 255, 255, 3000, SoundExpressionEffect.None, InterpolationCurve.Linear)
 // set up the neoPixel class
 moveMotorZIP = Kitronik_Move_Motor.createMoveMotorZIPLED(4)
 

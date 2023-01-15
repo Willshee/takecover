@@ -149,7 +149,7 @@ Status is defined as
 let moveMotorZIP: Kitronik_Move_Motor.MoveMotorZIP = null // Zip LED class
 const scanPeriod : uint16 = 2000 // Period to rotate the scanning LEDs
 // A sound effect definition for the explode effect (could be declared locally in a later version)
-const mySound = music.createSoundEffect(WaveShape.Noise, 500, 499, 255, 0, 750, SoundExpressionEffect.None, InterpolationCurve.Linear)
+const mySound = music.createSoundEffect(WaveShape.Noise, 100, 200, 255, 255, 3000, SoundExpressionEffect.None, InterpolationCurve.Linear)
 // set up the neoPixel class
 moveMotorZIP = Kitronik_Move_Motor.createMoveMotorZIPLED(4)
 

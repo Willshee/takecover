@@ -11,7 +11,7 @@ function explode () {
     Kitronik_Move_Motor.spin(Kitronik_Move_Motor.SpinDirections.Left, 100)
     basic.showIcon(IconNames.No)
     basic.pause(1000)
-    for (let spinspeed = 90; spinspeed > 0; spinspeed -= 10 ) {
+    for (let spinspeed : number = 90; spinspeed > 0; spinspeed -= 10 ) {
         Kitronik_Move_Motor.spin(Kitronik_Move_Motor.SpinDirections.Left, spinspeed)
         basic.pause(200)
     }
@@ -21,8 +21,8 @@ function explode () {
     moveMotorZIP.show()
     basic.pause(2000)
     status = 1
-    control.inBackground(scanLEDS);
     basic.showString("Done")
+    control.inBackground(scanLEDS);
 }
 
 /* Function to generate beeps at reducing time period
@@ -57,7 +57,7 @@ function LED_level (timeval: number, period: number, phase: number) {
    Runs while status is set to 1, exits when status changes
 */
 function scanLEDS () {
-let timeval = 0 // holds running time in ms
+let timeval : number = 0 // holds running time in ms
 
     while (status == 1) {
         timeval = input.runningTime()
@@ -75,8 +75,8 @@ If in the countdown when button B is pressed, resets to waiting
 and restarts the LED scaning Function
 */
 input.onButtonPressed(Button.B, () => {
-    if (status == 2) {
-        status = 1
+    if (status == 2) { // countdown running
+        status = 1  // Stops the countdown
         basic.clearScreen()
         control.inBackground(scanLEDS);
     }
@@ -139,7 +139,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 
 // Global Variables
-let status = 0 // Used to track state for state machine operation
+let status : uint8 = 0 // Used to track state for state machine operation
 /*
 Status is defined as
   1 waiting to start (running scanLEDS)
@@ -147,9 +147,9 @@ Status is defined as
   3 exploding
 */
 let moveMotorZIP: Kitronik_Move_Motor.MoveMotorZIP = null // Zip LED class
-const scanPeriod = 2000 // Period to rotate the scanning LEDs
+const scanPeriod : uint16 = 2000 // Period to rotate the scanning LEDs
 // A sound effect definition for the explode effect (could be declared locally in a later version)
-const mySound = music.createSoundEffect(WaveShape.Noise, 100, 200, 255, 255, 3000, SoundExpressionEffect.None, InterpolationCurve.Linear)
+const mySound = music.createSoundEffect(WaveShape.Noise, 500, 499, 255, 0, 750, SoundExpressionEffect.None, InterpolationCurve.Linear)
 // set up the neoPixel class
 moveMotorZIP = Kitronik_Move_Motor.createMoveMotorZIPLED(4)
 
